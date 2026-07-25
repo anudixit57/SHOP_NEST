@@ -1,0 +1,18 @@
+{
+  "name": "shopnest-full-stack",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^10.0.3"
+  },
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "start": "npm --prefix frontend start",
+    "dev": "concurrently -n frontend,backend -c cyan,green \"npm --prefix frontend start\" \"npm --prefix backend run dev\"",
+    "frontend": "npm --prefix frontend start",
+    "backend": "npm --prefix backend start",
+    "backend:dev": "npm --prefix backend run dev",
+    "seed": "npm --prefix backend run seed",
+    "build": "npm --prefix frontend run build"
+  }
+}
