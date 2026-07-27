@@ -19,31 +19,91 @@ const About = () => {
     background: '#27272a',
     color: '#fff',
     borderRadius: '8px',
-    textDecoration: 'none',
-    transition: 'all 0.3s ease',
-    border: '1px solid rgba(255, 255, 255, 0.1)'
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+    cursor: 'pointer',
+    fontSize: '16px'
   };
 
   return (
     <div style={containerStyle}>
-      <img
-        src="/dp.jpg"
-        alt="@AnuDixit"
-        style={{ width: '180px', height: '180px', borderRadius: '50%', objectFit: 'cover', border: '4px solid #f97316', marginBottom: '20px', boxShadow: '0 4px 20px rgba(249, 115, 22, 0.4)' }}
-      />
-      <h2 style={{ fontSize: '2.5rem', marginBottom: '10px', color: '#fff' }}>About Me</h2>
-      <h3 style={{ fontSize: '1.5rem', color: '#f97316', marginBottom: '15px' }}>Anu Dixit(@Anu Dixit)</h3>
+      <h2
+        style={{
+          fontSize: '2.5rem',
+          marginBottom: '10px',
+          color: '#fff'
+        }}
+      >
+        About Me
+      </h2>
 
-      <p style={{ color: '#a1a1aa', fontSize: '1.2rem', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto 30px auto' }}>
-        <strong>Join the community and grow together!</strong> Welcome to my platform where we build, deploy, and scale highly engineered systems.
+      <h3
+        style={{
+          fontSize: '1.5rem',
+          color: '#f97316',
+          marginBottom: '15px'
+        }}
+      >
+        Anu Dixit (@Anu Dixit)
+      </h3>
+
+      <p
+        style={{
+          color: '#a1a1aa',
+          fontSize: '1.2rem',
+          lineHeight: '1.8',
+          maxWidth: '600px',
+          margin: '0 auto 30px auto'
+        }}
+      >
+        <strong>Join the community and grow together!</strong> Welcome to my
+        platform where we build, deploy, and scale highly engineered systems.
       </p>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginTop: '20px' }}>
-        
-        <a href="" target="_blank" rel="noreferrer" style={{ ...socialBtnStyle, background: 'rgba(236, 72, 153, 0.2)', borderColor: '#ec4899', color: '#ec4899' }}>📸 Instagram</a>
-        <a href="" target="_blank" rel="noreferrer" style={{ ...socialBtnStyle, background: 'rgba(59, 130, 246, 0.2)', borderColor: '#3b82f6', color: '#3b82f6' }}>💼 LinkedIn</a>
-        <a href="" target="_blank" rel="noreferrer" style={socialBtnStyle}>✖️ X (Twitter)</a>
-        <a href="" target="_blank" rel="noreferrer" style={{ ...socialBtnStyle, background: 'rgba(16, 185, 129, 0.2)', borderColor: '#10b981', color: '#10b981' }}>💬 WhatsApp</a>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '10px',
+          marginTop: '20px'
+        }}
+      >
+        <button
+          style={{
+            ...socialBtnStyle,
+            background: 'rgba(236, 72, 153, 0.2)',
+            borderColor: '#ec4899',
+            color: '#ec4899'
+          }}
+        >
+          📸 Instagram
+        </button>
+
+        <button
+          style={{
+            ...socialBtnStyle,
+            background: 'rgba(59, 130, 246, 0.2)',
+            borderColor: '#3b82f6',
+            color: '#3b82f6'
+          }}
+        >
+          💼 LinkedIn
+        </button>
+
+        <button style={socialBtnStyle}>
+          ✖️ X (Twitter)
+        </button>
+
+        <button
+          style={{
+            ...socialBtnStyle,
+            background: 'rgba(16, 185, 129, 0.2)',
+            borderColor: '#10b981',
+            color: '#10b981'
+          }}
+        >
+          💬 WhatsApp
+        </button>
       </div>
     </div>
   );
