@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('/api/products');
+        const res = await fetch('https://shop-nest-qonk.onrender.com/api/products');
         if (!res.ok) {
           throw new Error(`Could not load products (HTTP ${res.status})`);
         }
