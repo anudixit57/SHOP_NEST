@@ -4,7 +4,7 @@ A full-stack MERN E-commerce website.
 
 ## 🚀 Live Demo
 
-https://your-live-url.onrender.com
+
 
 ## 🛠 Tech Stack
 
@@ -16,4 +16,4 @@ https://your-live-url.onrender.com
 
 - # ShopNest
 
-🚀 Live Demo: https://shop-nest-frontend.onrender.com
+🚀 Live Demo: 
