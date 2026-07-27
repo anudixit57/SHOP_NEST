@@ -10,7 +10,7 @@ const Register = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  /*const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await fetch('https://shop-nest-s6pi.onrender.com/api/auth/register', {
@@ -28,6 +28,34 @@ const Register = () => {
       }
     } catch (error) {
       console.error(error);
+    }
+  };*/
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (loading) return; // guard against double click
+    setLoading(true);
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert('Registration Successful! Please check your email for the Welcome OTP.');
+        login(data);
+        navigate('/');
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Something went wrong. Please try again.'); // don't fail silently
+    } finally {
+      setLoading(false);
     }
   };
 

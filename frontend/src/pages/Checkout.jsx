@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +19,7 @@ const Checkout = () => {
 
   const handlePayment = async () => {
     try {
-      const orderRes = await fetch('https://shop-nest-s6pi.onrender.com/api/payment/order', {
+      const orderRes = await fetch('/api/payment/order', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: totalPrice })
@@ -36,20 +37,20 @@ const Checkout = () => {
       }
 
       const options = {
-        key: 'rzp_test_dummykey123', // Student dummy fallback
+        key: 'rzp_test_TFKKjkf8Tw7wTO', // Student dummy fallback
         amount: orderData.amount,
         currency: orderData.currency,
         name: 'ShopNest',
         description: 'Test Transaction',
         order_id: orderData.id,
         handler: async function (response) {
-          const verifyRes = await fetch('https://shop-nest-s6pi.onrender.com/api/payment/verify', {
+          const verifyRes = await fetch('/api/payment/verify', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(response)
           });
           if (verifyRes.ok) {
-            const saveOrderRes = await fetch('https://shop-nest-s6pi.onrender.com/api/orders', {
+            const saveOrderRes = await fetch('/api/orders', {
               method: 'POST',
               headers: { 
                 'Content-Type': 'application/json',
@@ -91,7 +92,7 @@ const Checkout = () => {
   };
 
   const bypassPayment = async () => {
-    const saveOrderRes = await fetch('https://shop-nest-s6pi.onrender.com/api/orders', {
+    const saveOrderRes = await fetch('/api/orders', {
       method: 'POST',
       headers: { 
         'Content-Type': 'application/json',

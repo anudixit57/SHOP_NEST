@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('https://shop-nest-s6pi.onrender.com/api/products');
+        const res = await fetch('/api/products');
         if (!res.ok) {
           throw new Error(`Could not load products (HTTP ${res.status})`);
         }
